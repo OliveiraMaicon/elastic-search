@@ -1,0 +1,26 @@
+Configuration:
+  name: PropertiesConfig
+  status: DEBUG
+  dest: err
+
+  Appenders:
+    Console:
+      name: ConsoleAppender
+      target: SYSTEM_OUT
+      PatternLayout:
+        pattern: "[%d{dd-MM-yyyy HH:mm:ss.SSS}] %highlight{[%-5level]} [%t] %highlight{%c{1}} - %msg%n%throwable"
+
+  Loggers:
+    Root:
+      level: error
+      AppenderRef:
+        - ref: ConsoleAppender
+
+    Logger:
+      - name:  br.com.oliveira.learning.elasticsearch
+        additivity: false
+        level: info
+        AppenderRef:
+          - ref: ConsoleAppender
+            level: info
+

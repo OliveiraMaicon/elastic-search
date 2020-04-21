@@ -1,0 +1,15 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: elastic-search
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ["info","health"]
+  endpoint:
+    health:
+      show-details: always
